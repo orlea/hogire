@@ -1,0 +1,6 @@
+version: "3"
+services:
+  bot:
+    image: orlea/hogire:latest
+    env_file: .env
+    command: "node src/app.js"
