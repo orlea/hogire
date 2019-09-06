@@ -3,4 +3,6 @@ services:
   bot:
     image: orlea/hogire:latest
     env_file: .env
+    volumes:
+      - /mnt/efs/emoji:/data
     command: "node src/app.js"

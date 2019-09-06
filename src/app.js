@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const BASE_URL = process.env.INSTANCE
 const access_token = process.env.ACCESS_TOKEN
-const emojidir = process.env.EMOJIDIR
+const emojidir = "/data"
 
 const client = new Mastodon(access_token, BASE_URL + '/api/v1')
 const stream = client.stream('/streaming/direct')
@@ -39,7 +39,7 @@ stream.on('update', status => {
           }
         }
       )
-      
+
     }
 
   }
