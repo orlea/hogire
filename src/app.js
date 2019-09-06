@@ -24,7 +24,7 @@ stream.on('update', status => {
     var tag = status.tags[0].name
     console.log("tag:" + tag)
 
-    if((filename != 'original')&&(source_acct == 'aries@mstdn.asterism.xyz')&&(tag == 'ariesadmin')) {
+    if((source_acct == 'aries@mstdn.asterism.xyz')&&(tag == 'ariesadmin')) {
       filename = status.tags[1].name
       console.log("emoji name:" + filename)
       var filepath = emojidir + filename
