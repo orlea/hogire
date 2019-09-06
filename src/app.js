@@ -19,13 +19,15 @@ stream.on('update', status => {
     console.log(status)
     var imageurl = status.media_attachments[0].url
     console.log("image url:" + imageurl)
+    var image_ex = imageurl.match(".+/(.+?)([\?#;].*)?$")[1]
+    image_ex = image_ex.split('.')[1]
     var source_acct = status.account.acct
     console.log("acct:" + source_acct)
     var tag = status.tags[0].name
     console.log("tag:" + tag)
 
     if((source_acct == 'aries@mstdn.asterism.xyz')&&(tag == 'ariesadmin')) {
-      filename = status.tags[1].name
+      filename = status.tags[1].name + "." + image_ex
       console.log("emoji name:" + filename)
       var filepath = emojidir + filename
       console.log("filepath:" + filepath)
